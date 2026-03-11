@@ -5,7 +5,6 @@
 
 // procura consulta pelo id
 int buscarPorId(Consulta *vetor, int total, int id){
-
     int i;
 
     for (i = 0; i < total; i++){
@@ -20,7 +19,6 @@ int validarData(char data[]){
     if (strlen(data) != 10){
         return 0;
     }
-
     if (data[2] != '/' || data[5] != '/'){
         return 0;
     }
@@ -39,7 +37,6 @@ int validarHora(char hora[]){
 }
 // valida se o nome tem apenas letras e espaços
 int validarNome(char nome[]){
-
     int i;
 
     for (i = 0; nome[i] != '\0'; i++){
@@ -51,9 +48,8 @@ int validarNome(char nome[]){
 }
 // valida se tem apenas numeros
 int validarnumero(char numero[]){
-
     int i;
-
+    
     for (i = 0; numero[i] != '\0'; i++){
         if (numero[i] < '0' || numero[i] > '9'){
             return 0;
@@ -65,7 +61,6 @@ int validarnumero(char numero[]){
 int horaParaMinutos(char hora[]){
 
     int h, m;
-
     sscanf(hora, "%d:%d", &h, &m);
 
     return h * 60 + m;
@@ -80,7 +75,6 @@ void inserirConsulta(Consulta **vetor, int *total, int *capacidade){
     if (*total == *capacidade){
 
         *capacidade = *capacidade + 10;
-
         *vetor = realloc(*vetor, (*capacidade) * sizeof(Consulta));
     }
     
@@ -130,7 +124,6 @@ void inserirConsulta(Consulta **vetor, int *total, int *capacidade){
         printf("2 - Amarelo\n");
         printf("3 - Vermelho\n");
         printf("Opcao: ");
-
         scanf("%s", nova.estado);
 
         if (validarnumero(nova.estado)){
@@ -184,7 +177,6 @@ void inserirConsulta(Consulta **vetor, int *total, int *capacidade){
 
     // salva no vetor
     (*vetor)[*total] = nova;
-
     (*total)++;
 
     printf("\nConsulta cadastrada com sucesso!\n");
