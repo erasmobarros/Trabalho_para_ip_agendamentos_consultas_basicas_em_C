@@ -3,6 +3,7 @@
 
 #define TAM 50
 
+// estrutra da consulta
 typedef struct {
     int id;
     char paciente[TAM];
@@ -15,7 +16,6 @@ typedef struct {
 } Consulta;
 
 int buscarPorId(Consulta *vetor, int total, int id);
-
 void inserirConsulta(Consulta **vetor, int *total, int *capacidade);
 void listarConsultas(Consulta *vetor, int total);
 int validarData(char data[]);

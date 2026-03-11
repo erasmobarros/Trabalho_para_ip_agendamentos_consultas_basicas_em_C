@@ -17,7 +17,7 @@ int main(){
         printf("Erro de memoria.\n");
         return 1;
     }
-
+    // menu inical
     do{
 
         printf("\n==== SISTEMA DE CONSULTAS UFAPE====\n");
