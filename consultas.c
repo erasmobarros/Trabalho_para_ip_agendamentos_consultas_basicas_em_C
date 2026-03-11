@@ -80,14 +80,16 @@ void inserirConsulta(Consulta **vetor, int *total, int *capacidade){
     
     // cadastrar consultorio
     while (1){
-        printf("Informe o numero do Consultorio da consulta: ");
-        scanf("%d", &nova.id);
 
-        if (buscarPorId(*vetor, *total, nova.id) != -1){
-            printf("Consultorio ja ocupado. Digite outro.\n");
-        } else{
-            break;
-        }
+    printf("Informe o numero do Consultorio da consulta: ");
+    scanf("%d", &nova.id);
+
+    if (buscarPorId(*vetor, *total, nova.id) != -1){
+        printf("Consultorio ja ocupado. Digite outro.\n");
+    } 
+    else{
+        break;
+    }
     }
     
     // nome paciente
